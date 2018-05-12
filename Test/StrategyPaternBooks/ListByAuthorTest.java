@@ -37,12 +37,21 @@ class ListByAuthorTest {
 		
 		LBA.SortForward(ALBI);
 		
-		if(ALBI.get(0).sAuthor.compareTo(ALBI.get(1).sAuthor) <= 0)
-		{
-			fail("The sort didn't work!");
-		}
-			
+		assertTrue(ALBI.get(0).sAuthor.compareTo(ALBI.get(1).sAuthor) >= 0);
+		
+		assertFalse(ALBI.get(0).sAuthor.compareTo(ALBI.get(1).sAuthor) <= 0);	
 		
 	}
+	
+	@Test
+	final void testSortBackward()
+	{
+		//This method doesn't do anything.  Nothing to test.
+	}
 
+	@Test
+	final void testSortNone()
+	{
+		//This method doesn't do anything.  Nothing to test.
+	}
 }

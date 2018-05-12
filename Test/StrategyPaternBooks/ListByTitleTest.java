@@ -20,7 +20,7 @@ class ListByTitleTest {
 
 	@Test
 	final void testSortForward() {
-		ListByAuthor LBA = new ListByAuthor();
+		ListByTitle LBT = new ListByTitle();
 		ArrayList<BookInformation> ALBI = new ArrayList<BookInformation>();
 		StrategyPaternBooks.BookInformation Book1 = new BookInformation();
 		StrategyPaternBooks.BookInformation Book2 = new BookInformation();
@@ -33,12 +33,24 @@ class ListByTitleTest {
 		ALBI.add(Book2);
 		
 		
-		LBA.SortForward(ALBI);
+		LBT.SortForward(ALBI);
 		
-		if(ALBI.get(0).getTitle().compareTo(ALBI.get(1).getTitle()) <= 0)
-		{
-			fail("The sort didn't work!");
-		}
+		assertTrue(ALBI.get(0).getTitle().compareTo(ALBI.get(1).getTitle()) >= 0);
+		
+		assertFalse(ALBI.get(0).getTitle().compareTo(ALBI.get(1).getTitle()) <= 0);	
+		
+	}
+	
+	@Test
+	final void testSortBackward()
+	{
+		//This method doesn't do anything.  Nothing to test.
+	}
+
+	@Test
+	final void testSortNone()
+	{
+		//This method doesn't do anything.  Nothing to test.
 	}
 
 }
